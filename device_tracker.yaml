@@ -1,0 +1,6 @@
+- platform: bluetooth_tracker
+
+- platform: nmap_tracker
+  hosts:
+  - 10.0.0.48
+  
