@@ -1,0 +1,6 @@
+Office:
+  name: Office
+  entities:
+  - switch.office_lamp
+  - switch.morgans_lamp
+  - switch.jacobs_lamp

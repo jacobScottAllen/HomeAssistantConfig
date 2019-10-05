@@ -1,0 +1,21 @@
+- alias: Nighttime Nudge
+  trigger:
+    platform: time
+    at: "20:30:00"
+  action:
+    service: script.nighttime_lights
+
+- alias: Morning Wakeup
+  trigger:
+    platform: time
+    at: "5:31:00"
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+    service: script.morning_wakeup
