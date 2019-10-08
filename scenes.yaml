@@ -1,0 +1,8 @@
+- name: watching_tv
+  entities:
+    light.big_lamp:
+      state: on
+      brightness: 191
+    light.floor_lamp:
+      state: on
+      brightness: 191
