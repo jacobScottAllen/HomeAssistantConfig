@@ -6,3 +6,43 @@
     light.floor_lamp:
       state: on
       brightness: 191
+      
+- name: lr_on
+  entities:
+    light.living_room:
+      state: on
+      brightness: 255
+
+- name: lr_half
+  entities:
+    light.living_room:
+      state: on
+      brightness: 116
+      
+- name: lr_off
+  entities:
+    light.living_room:
+      state: off
+      
+- name: br_on
+  entities:
+    light.bedroom:
+      state: on
+      brightness: 255
+
+- name: br_half
+  entities:
+    light.bedroom:
+      state: on
+      brightness: 116
+      
+- name: br_off
+  entities:
+    light.bedroom:
+      state: off
+
+- name: all_off
+  entities:
+    light.bedroom: off
+    light.living_room: off
+    group.office: off
