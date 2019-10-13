@@ -2,10 +2,10 @@
   entities:
     light.big_lamp:
       state: on
-      brightness: 191
+      brightness: 127
     light.floor_lamp:
       state: on
-      brightness: 191
+      brightness: 127
       
 - name: lr_on
   entities:
