@@ -2,6 +2,9 @@
   trigger:
     platform: time
     at: "20:30:00"
+  condition:
+    condition: template
+    value_template: "{{ states.light.living_room.attributes.brightness > 127 }}"
   action:
     service: script.nighttime_lights
 
