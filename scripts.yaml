@@ -1,10 +1,5 @@
 nighttime_lights:
   sequence:
-  - alias: dim living room lights
-    service: hue.hue_activate_scene
-    data:
-      group_name: "Living Room"
-      scene_name: "Dimmed"
   - alias: dim bedroom lights
     service: hue.hue_activate_scene
     data:
@@ -15,6 +10,14 @@ nighttime_lights:
     data:
       entity_id:
       - group.office
+  - condition: numeric_state
+    entity_id: light.living_room
+    above: 127
+  - alias: dim living room lights
+    service: hue.hue_activate_scene
+    data:
+      group_name: "Living Room"
+      scene_name: "Dimmed"
 
 morning_wakeup:
   sequence:
