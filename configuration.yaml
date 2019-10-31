@@ -28,3 +28,9 @@ binary_sensor:
             mdi:home-outline
           {% endif %}
         value_template: "{{ is_state('person.jacob_allen','home') or  is_state('person.morgan_allen','home') }}"
+        
+wemo:
+  static:
+    - !secret wemo_1
+    - !secret wemo_2
+    - !secret wemo_3
