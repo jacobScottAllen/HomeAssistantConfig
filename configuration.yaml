@@ -16,7 +16,19 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 device_tracker: !include device_tracker.yaml
 
-# Example configuration.yaml entry with static device entries that include non-standard port numbers
+binary_sensor:
+  - platform: template
+    sensors:
+      someone_home:
+        friendly_name: "Someone Home"
+        icon_template: >-
+          {% if is_state('binary_sensor.someone_home','on') %}
+            mdi:home-account
+          {% else %}
+            mdi:home-outline
+          {% endif %}
+        value_template: "{{ is_state('person.jacob_allen','home') or  is_state('person.morgan_allen','home') }}"
+        
 wemo:
   static:
     - !secret wemo_1
