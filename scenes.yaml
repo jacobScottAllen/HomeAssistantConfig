@@ -46,3 +46,13 @@
     light.bedroom: off
     light.living_room: off
     group.office: off
+    
+- name: accent_on
+  entities:
+    group.accent:
+      state: on
+
+- name: accent_off
+  entities:
+    group.accent:
+      state: off
