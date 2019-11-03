@@ -4,3 +4,9 @@ Office:
   - switch.office_lamp
   - switch.morgans_lamp
   - switch.jacobs_lamp
+
+accent:
+  name: accent
+  entities:
+  - light.74808760cc50e379d109
+  - light.74808760cc50e379d005

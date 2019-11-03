@@ -34,3 +34,9 @@ wemo:
     - !secret wemo_1
     - !secret wemo_2
     - !secret wemo_3
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: 1
+  platform: tuya

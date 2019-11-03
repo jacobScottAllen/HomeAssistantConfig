@@ -19,6 +19,17 @@
     - fri
   action:
     service: script.morning_wakeup
+  action:
+    service: scene.turn_on
+    entity_id: scene.accent_on
+
+- alias: Should be in bed
+  trigger:
+    platform: time
+    at: "21:30:00"
+  action:
+    service: scene.turn_on
+    entity_id: scene.accent_off
     
 - alias: Watching TV
   trigger:
