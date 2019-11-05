@@ -41,6 +41,16 @@
     light.bedroom:
       state: off
 
+- name: office_on
+  entities:
+    group.office:
+      state: on
+      
+- name: office_off
+  entities:
+    group.office:
+      state: off
+
 - name: all_off
   entities:
     light.bedroom: off
@@ -54,4 +64,4 @@
 
 - name: accent_off
   entities:
-    group.accent: on
+    group.accent: off
