@@ -1,14 +1,14 @@
 - alias: Nighttime Nudge
   trigger:
     platform: time
-    at: "20:30:00"
+    at: '20:30:00'
   action:
     service: script.nighttime_lights
-
+  
 - alias: Morning Wakeup
   trigger:
     platform: time
-    at: "5:31:00"
+    at: '5:31:00'
   condition:
     condition: time
     weekday:
@@ -19,53 +19,70 @@
     - fri
   action:
     service: script.morning_wakeup
-    
+  
 - alias: Watching TV
   trigger:
     platform: state
     entity_id: media_player.living_room_tv
-    from: "idle"
-    to: "playing"
+    from: idle
+    to: playing
   action:
     service: scene.turn_on
     entity_id: scene.watching_tv
     
 - alias: Turn off Accent
-  trigger: 
+  trigger:
     platform: state
     entity_id: light.living_room
-    from: "on"
-    to: "off"
+    from: 'on'
+    to: 'off'
   action:
     service: scene.turn_on
     entity_id: scene.accent_off
-
+  
 - alias: Turn on Accent
-  trigger: 
+  trigger:
     platform: state
     entity_id: light.living_room
-    from: "off"
-    to: "on"
+    from: 'off'
+    to: 'on'
   action:
     service: scene.turn_on
     entity_id: scene.accent_on
-
+  
 - alias: Turn on Office
   trigger:
     platform: state
     entity_id: binary_sensor.wyzesense_778b9dd0
-    from: "off"
-    to: "on"
+    from: 'off'
+    to: 'on'
   action:
     service: scene.turn_on
     entity_id: scene.office_on
-    
+  
 - alias: Turn off Office
   trigger:
     platform: state
     entity_id: binary_sensor.wyzesense_778b9dd0
-    from: "on"
-    to: "off"
+    from: 'on'
+    to: 'off'
   action:
     service: scene.turn_on
     entity_id: scene.office_off
+  
+- alias: Turn on patio at sunset
+  trigger:
+  - event: sunset
+    platform: sun
+  action:
+    service: scene.turn_on
+    entity_id: scene.patio_on
+
+- alias: Turn off patio before bed
+  trigger:
+    platform: time
+    at: '21:00:00'
+  action:
+    service: scene.turn_on
+    entity_id: scene.patio_off
+  

@@ -65,3 +65,11 @@
 - name: accent_off
   entities:
     group.accent: off
+
+- name: patio_on
+  entities:
+    switch.37677666600194d241f4_1: on
+
+- name: patio_off
+  entities:
+    switch.37677666600194d241f4_1: off
