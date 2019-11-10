@@ -19,6 +19,18 @@
     - fri
   action:
     service: script.morning_wakeup
+
+- alias: Weekend Wakeup
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition:
+    condition: time
+    weekday:
+    - sat
+    - sun
+  action:
+    service: script.weekend_wakeup
   
 - alias: Watching TV
   trigger:
@@ -93,6 +105,14 @@
   action:
     service: scene.turn_on
     entity_id: scene.patio_on
+
+- alias: Turn off patio at sunrise
+  trigger:
+  - event: sunrise
+    platform: sun
+  action:
+    service: scene.turn_on
+    entity_id: scene.patio_off
 
 - alias: Turn off patio before bed
   trigger:

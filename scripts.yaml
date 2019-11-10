@@ -21,6 +21,16 @@ nighttime_lights:
 
 morning_wakeup:
   sequence:
+  - alias: set living room light
+    service: light.turn_on
+    entity_id: light.living_room
+    data:
+      brightness: 1
+  - alias: set bedroom light
+    service: light.turn_on
+    entity_id: light.bedroom
+    data:
+      brightness: 1
   - alias: fade in living room lights
     service: light.turn_on
     entity_id: light.living_room
@@ -32,4 +42,23 @@ morning_wakeup:
     entity_id: light.bedroom
     data:
       transition: 600
+      brightness: 255
+  - alias: turn on patio
+    service: service.turn_on
+    data:
+      entity_id:
+      - scene.patio_on
+
+weekend_wakeup:
+  sequence:
+  - alias: set living room light
+    service: light.turn_on
+    entity_id: light.living_room
+    data:
+      brightness: 1
+  - alias: fade in living room lights
+    service: light.turn_on
+    entity_id: light.living_room
+    data:
+      transition: 1200
       brightness: 255
